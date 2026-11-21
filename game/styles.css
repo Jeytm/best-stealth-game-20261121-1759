@@ -1,0 +1,38 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #07090f; height: 100%; }
+body { display: flex; align-items: center; justify-content: center; font-family: Georgia, 'Times New Roman', serif; }
+#stage { position: relative; width: 1280px; height: 768px; box-shadow: 0 0 60px rgba(0,0,0,.9); }
+#game { display: block; width: 1280px; height: 768px; background: #10141f; }
+#hud {
+  position: absolute; left: 0; right: 0; top: 0; padding: 10px 18px 8px;
+  background: linear-gradient(rgba(4,6,12,.92), rgba(4,6,12,.55) 80%, transparent);
+  color: #e8e2cf; pointer-events: none; user-select: none;
+}
+#hud-title { font-size: 15px; letter-spacing: 4px; color: #f2c14e; }
+#hud-objective { font-size: 13px; font-style: italic; color: #c9c2a8; margin-top: 2px; }
+#hud-row { display: flex; align-items: center; gap: 10px; margin-top: 6px; font-size: 12px; }
+#hud-label { letter-spacing: 2px; color: #f2c14e; }
+#meter { width: 260px; height: 12px; border: 1px solid #6b5a2e; border-radius: 6px; background: #14100a; overflow: hidden; }
+#meter-fill { height: 100%; width: 0%; background: #f2c14e; transition: width .12s linear, background .2s; }
+#hud-shards { color: #9fd8e8; margin-left: 14px; }
+#hud-time { margin-left: auto; color: #c9c2a8; font-variant-numeric: tabular-nums; }
+#overlay {
+  position: absolute; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center;
+  background: rgba(5,7,13,.82); color: #e8e2cf; text-align: center; padding: 40px;
+}
+#overlay.show { display: flex; }
+#overlay h1 { font-size: 46px; letter-spacing: 6px; margin: 0 0 10px; color: #f2c14e; line-height: 1.1; }
+#overlay .sub { font-style: italic; color: #c9c2a8; margin: 0 0 18px; }
+#overlay .keys { font-size: 14px; color: #e8e2cf; }
+#overlay .goal { font-size: 15px; line-height: 1.6; color: #d8d0b4; }
+#overlay .ember { color: #ff9a3c; }
+#overlay .exit { color: #7ddc8a; }
+#overlay .press { margin-top: 22px; font-size: 16px; letter-spacing: 2px; color: #f2c14e; animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+#banner {
+  position: absolute; left: 50%; top: 84px; transform: translateX(-50%);
+  font-size: 22px; letter-spacing: 5px; color: #ff5a4e; text-shadow: 0 0 14px rgba(255,60,40,.8);
+  opacity: 0; transition: opacity .25s; pointer-events: none; user-select: none; font-weight: bold;
+}
+#banner.show { opacity: 1; }
+#banner.calm { color: #7ddc8a; text-shadow: 0 0 14px rgba(80,220,120,.7); }

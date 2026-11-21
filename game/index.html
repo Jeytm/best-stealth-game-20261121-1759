@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Night in the Ember Archive — a stealth game</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game" width="1280" height="768"></canvas>
+  <div id="hud">
+    <div id="hud-title">NIGHT IN THE EMBER ARCHIVE</div>
+    <div id="hud-objective">Steal the Ember Idol, then slip out the green door — unseen.</div>
+    <div id="hud-row">
+      <span id="hud-label">SEEN</span>
+      <div id="meter"><div id="meter-fill"></div></div>
+      <span id="hud-shards">Moonshards 0 / 3</span>
+      <span id="hud-time">00:00</span>
+    </div>
+  </div>
+  <div id="overlay" class="show">
+    <h1>NIGHT IN THE<br>EMBER ARCHIVE</h1>
+    <p class="sub">A quiet little stealth game. The archive sleeps — but its guards do not.</p>
+    <p class="keys">Move <b>WASD / arrows</b> &nbsp;·&nbsp; Hold <b>Shift</b> to run (louder) &nbsp;·&nbsp; <b>M</b> mute</p>
+    <p class="goal">Take the <b class="ember">Ember Idol</b> from its case, then reach the <b class="exit">green door</b>.<br>
+    Crates and shelves block a guard's sight. Dark floor hides you. If a guard's cone finds you,<br>
+    the SEEN meter fills — break line of sight and it drains again. A full meter means a chase.</p>
+    <p class="press">Press <b>Enter</b> to begin</p>
+  </div>
+  <div id="banner"></div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
